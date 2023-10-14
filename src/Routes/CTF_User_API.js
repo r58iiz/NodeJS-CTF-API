@@ -50,8 +50,8 @@ router.post("/submit/solution", async function(req, res) {
 
 router.post("/create", async function(req, res) {
   const data = new userTable({
-    userID: req.body.uID,
-    userTag: req.body.uTag,
+    userID: req.body.userID,
+    userTag: req.body.userTag,
     points: 0,
     challengesSolved: []
   });
@@ -72,7 +72,7 @@ router.post("/create", async function(req, res) {
   }); // If all goes well
 });
 
-router.post("/position", async function(req, res) {
+router.get("/position", async function(req, res) {
   const User = await userTable.findOne({ userID: req.body.userID });
   if (Object.entries(User).length === 0 && User.constructor === Object) {
     return res.json({ success: false, reason: "User not found" }); // user not found

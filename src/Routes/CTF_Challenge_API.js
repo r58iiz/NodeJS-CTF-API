@@ -2,18 +2,18 @@ const express = require("express");
 const challengeTable = require("../Models/CTF_CHALLENGE_Schema.js");
 const userTable = require("../Models/CTF_USER_Schema.js");
 const router = express.Router();
+const { authToken } = require('../config.json');
 
 router.post("/remove", function(req, res) {
   if (
-    req.body.authorization !==
-    "��i_�Jg����INVR3�~��&�[�v����CA>���P��U��z�)'��X|��S�WԨqJ�buibda"
+    req.body.authorization !== auth_token
   ) {
     return res.status(400);
   }
   verify();
   async function verify() {
     let chall = await challengeTable.findOne({
-      challengeTAG: req.body.challengeTAG,
+      challengeTag: req.body.challengeTag,
       challengeID: req.body.challengeID
     });
     if (Object.entries(chall).length === 0 && chall.constructor === Object) {
@@ -24,7 +24,7 @@ router.post("/remove", function(req, res) {
 
       challengeTable.findOneAndUpdate(
         {
-          challengeTAG: req.body.challengeTAG,
+          challengeTag: req.body.challengeTag,
           challengeID: req.body.challengeID
         },
         { expired: true }
@@ -34,7 +34,7 @@ router.post("/remove", function(req, res) {
         {
           challengesSolved: {
             $elemMatch: {
-              $eq: `${req.body.challengeTAG}`
+              $eq: `${req.body.challengeTag}`
             }
           }
         }
@@ -56,15 +56,14 @@ router.post("/remove", function(req, res) {
 
 router.post("/add", function(req, res) {
   if (
-    req.body.authorization !==
-    "��i_�Jg����INVR3�~��&�[�v����CA>���P��U��z�)'��X|��S�WԨqJ�buibda"
+    req.body.authorization !== auth_token
   ) {
     return res.status(400);
   }
   add();
   async function add() {
     const data = new challengeTable({
-      challengeTAG: req.body.challengeTAG,
+      challengeTag: req.body.challengeTag,
       challengeID: req.body.challengeID,
       expired: req.body.expired || false,
       points: req.body.points,
@@ -91,15 +90,15 @@ router.post("/add", function(req, res) {
   }
 });
 
-router.post("/list", function(res, req) {
+router.get("/list", function(res, req) {
   list();
   async function list() {
-    const name = req.body.challengeTAG || 0;
+    const name = req.body.challengeTag || 0;
     if (name == 0) {
       const arr = [];
       challengeTable.find().then(x => {
         arr.push({
-          name: x.challengeTAG,
+          name: x.challengeTag,
           ID: x.challengeID,
           Submitted: x.submittedBy,
           Points: x.points,
@@ -114,7 +113,7 @@ router.post("/list", function(res, req) {
         challengeTAG: req.body.challengeTAG
       });
       return res.json({
-        name: x.challengeTAG,
+        name: x.challengeTag,
         ID: x.challengeID,
         Submitted: x.submittedBy,
         Points: x.points,

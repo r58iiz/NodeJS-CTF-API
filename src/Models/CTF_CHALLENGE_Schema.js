@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
 
-let uri =
-  "dawdawd";
+const { mongoCTFUrl }  = require("../config.json");
 
-mongoose.connect(uri, {
+mongoose.connect(mongoCTFUrl, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
@@ -25,7 +24,7 @@ const CTF_CHALLENGES_Schema = new mongoose.Schema({
     required: true,
     unique: true
   },
-  challengeTAG: {
+  challengeTag: {
     type: String,
     required: true,
     unique: true

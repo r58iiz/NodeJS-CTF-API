@@ -1,0 +1,6 @@
+{
+    authToken: "some random stuff here",
+    mongoUserUrl: "url to mongoDB for storing users",
+    mongoCTFUrl: "url to mongoDB for storing CTF information",
+    sessionSecretKey: "session secret key"
+}
