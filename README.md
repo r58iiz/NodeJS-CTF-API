@@ -8,7 +8,7 @@
 		- [ ] Allow adding description
 		- [ ] Allow automated expiry
 		- [ ] Allow rating
-        	- [ ] Allow a walkthrough/writeup for expired challenges
+		- [ ] Allow a walkthrough/writeup for expired challenges
 - [ ] Access control
 - [ ] A full rewrite
 ---
