@@ -24,7 +24,7 @@ const CTF_CHALLENGES_Schema = new mongoose.Schema({
     required: true,
     unique: true
   },
-  challengeTAG: {
+  challengeTag: {
     type: String,
     required: true,
     unique: true
