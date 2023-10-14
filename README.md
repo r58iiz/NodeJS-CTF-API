@@ -1,6 +1,7 @@
 # An incomplete API for submitting CTF flags and maintaining a leaderboard running on NodeJs/MongoDB
 ---
 ## To-Do:
+- [ ] Update dependencies
 - [ ] Review current code
 - [ ] Make schemas more versatile
 	- [ ] Update user schema
