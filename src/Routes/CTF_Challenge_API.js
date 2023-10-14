@@ -2,11 +2,11 @@ const express = require("express");
 const challengeTable = require("../Models/CTF_CHALLENGE_Schema.js");
 const userTable = require("../Models/CTF_USER_Schema.js");
 const router = express.Router();
+const auth_token = require('../config.json')
 
 router.post("/remove", function(req, res) {
   if (
-    req.body.authorization !==
-    "��i_�Jg����INVR3�~��&�[�v����CA>���P��U��z�)'��X|��S�WԨqJ�buibda"
+    req.body.authorization !== auth_token
   ) {
     return res.status(400);
   }
@@ -56,8 +56,7 @@ router.post("/remove", function(req, res) {
 
 router.post("/add", function(req, res) {
   if (
-    req.body.authorization !==
-    "��i_�Jg����INVR3�~��&�[�v����CA>���P��U��z�)'��X|��S�WԨqJ�buibda"
+    req.body.authorization !== auth_token
   ) {
     return res.status(400);
   }
