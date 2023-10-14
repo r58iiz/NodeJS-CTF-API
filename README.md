@@ -12,7 +12,7 @@
 	    | Name                     | Description                                 |
 	    |--------------------------|---------------------------------------------|
 	    | `req.body.authorization` | Authorization key                           |
-	    | `req.body.challengeTAG`  | Displayed challenge name                    |
+	    | `req.body.challengeTag`  | Displayed challenge name                    |
 	    | `req.body.challengeID`   | Unique challenge ID                         |
 	    | `req.body.expired`       | `true` if challenge is expired else `false` |
 	    | `req.body.points`        | Challenge worth                             |
@@ -26,7 +26,7 @@
 	    | Name                     | Description                                 |
 	    |--------------------------|---------------------------------------------|
 	    | `req.body.authorization` | Authorization key                           |
-	    | `req.body.challengeTAG`  | Displayed challenge name                    |
+	    | `req.body.challengeTag`  | Displayed challenge name                    |
 	    | `req.body.challengeID`   | Unique challenge ID                         |
 3. GET: `/api/v1/challenges/list`
 	- Used to get: Either all the challenges OR Info about a single challenge
@@ -43,7 +43,7 @@
 	    | Name                     | Description                                 |
 	    |--------------------------|---------------------------------------------|
 	    | `req.body.userID`        | User ID of the user submitting              |
-	    | `req.body.challengeTAG`  | Displayed challenge name                    |
+	    | `req.body.challengeTag`  | Displayed challenge name                    |
 	    | `req.body.solution`      | The solution/flag submitted                 |
 2. GET: `/api/v1/users/position`
     - Used to get the position + data of user in the leaderboard
@@ -57,7 +57,7 @@
         | Name                     | Description                                 |
 	    |--------------------------|---------------------------------------------|
 	    | `req.body.userID`        | The user ID                                 |
-	    | `req.body.userTAG`       | The user tag                                |
+	    | `req.body.userTag`       | The user tag                                |
 
 ### Leaderboard
 - Base URL: `/api/v1/ctf`
