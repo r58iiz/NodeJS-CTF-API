@@ -90,7 +90,7 @@ router.post("/add", function(req, res) {
   }
 });
 
-router.post("/list", function(res, req) {
+router.get("/list", function(res, req) {
   list();
   async function list() {
     const name = req.body.challengeTAG || 0;
