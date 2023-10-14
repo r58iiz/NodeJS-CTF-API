@@ -2,7 +2,7 @@ const express = require("express");
 const challengeTable = require("../Models/CTF_CHALLENGE_Schema.js");
 const userTable = require("../Models/CTF_USER_Schema.js");
 const router = express.Router();
-const auth_token = require('../config.json')
+const { authToken } = require('../config.json');
 
 router.post("/remove", function(req, res) {
   if (
