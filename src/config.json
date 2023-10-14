@@ -1,0 +1,5 @@
+{
+    authToken: "some random stuff here",
+    mongoDB_User_Url: "url to mongoDB for storing users",
+    mongoDB_CTF_Url: "url to mongoDB for storing CTF information"
+}
