@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
 
-let uri =
-  "dawdaw";
+const { mongoDB_User_Url }  = require("../config.json");
 
-mongoose.connect(uri, {
+mongoose.connect(mongoDB_User_Url, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
