@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
-const { mongoDB_User_Url }  = require("../config.json");
+const { mongoUserUrl }  = require("../config.json");
 
-mongoose.connect(mongoDB_User_Url, {
+mongoose.connect(mongoUserUrl, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
