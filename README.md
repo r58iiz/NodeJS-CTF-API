@@ -71,10 +71,11 @@
 	    |--------------------------|---------------------------------------------|
 	    | `req.body.userID`        | The user ID                                 |
 	    | `req.body.userTag`       | The user tag                                |
-
+---
 ### Leaderboard
 - Base URL: `/api/v1/ctf`
 1. GET: `/api/v1/ctf/leaderboard`
     - Used to get the top 30 of the leaderboard
     - Data required:
         - None.
+---
