@@ -1,4 +1,17 @@
 # An incomplete API for submitting CTF flags and maintaining a leaderboard running on NodeJs/MongoDB
+---
+## To-Do:
+- [ ] Review current code
+- [ ] Make schemas more versatile
+	- [ ] Update user schema
+	- [ ] Update and expand challenge schema
+		- [ ] Allow adding description
+		- [ ] Allow automated expiry
+		- [ ] Allow rating
+        	- [ ] Allow a walkthrough/writeup for expired challenges
+- [ ] Access control
+- [ ] A full rewrite
+---
 ## Endpoints:
 1. [Challenges](#challenges)
 2. [Users](#users)
